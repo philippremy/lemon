@@ -7,8 +7,11 @@ FIND_PATH(GLPK_INCLUDE_DIR
   glpk.h
   PATHS ${GLPK_REGKEY}/include
   HINTS ${GLPK_ROOT_DIR}/include
+  HINTS ${GLPK_ROOT_DIR}/include/glpk
   HINTS ${GLPK_ROOT_DIR}/include/coin
+  HINTS ${GLPK_ROOT_DIR}/include/coin/glpk
   HINTS ${GLPK_ROOT_DIR}/include/coin-or
+  HINTS ${GLPK_ROOT_DIR}/include/coin-or/glpk
 )
 FIND_LIBRARY(GLPK_LIBRARY
   glpk
