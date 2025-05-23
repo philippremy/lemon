@@ -19,10 +19,6 @@
 #include <iostream>
 #include <lemon/soplex.h>
 
-#include <soplex.h>
-#include <spxout.h>
-
-
 ///\file
 ///\brief Implementation of the LEMON-SOPLEX lp solver interface.
 namespace lemon {
@@ -462,4 +458,3 @@ namespace lemon {
   }
 
 } //namespace lemon
-

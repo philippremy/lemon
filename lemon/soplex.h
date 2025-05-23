@@ -27,10 +27,8 @@
 
 #include <lemon/lp_base.h>
 
-// Forward declaration
-namespace soplex {
-  class SoPlex;
-}
+#include <soplex.h>
+#include <spxout.h>
 
 namespace lemon {
 
