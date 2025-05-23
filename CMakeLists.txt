@@ -264,6 +264,28 @@ IF(${CMAKE_SOURCE_DIR} STREQUAL ${PROJECT_SOURCE_DIR})
   ADD_SUBDIRECTORY(test)
 ENDIF()
 
+if(APPLE)
+  if(LEMON_BUILD_SHARED_LIBRARY)
+    set(LEMON_LIB_NAME "liblemon.dylib")
+  else()
+    set(LEMON_LIB_NAME "liblemon.a")
+  endif()
+elseif(WIN32)
+  if(LEMON_BUILD_SHARED_LIBRARY)
+    set(LEMON_LIB_NAME "liblemon.dll")
+  else()
+    set(LEMON_LIB_NAME "liblemon.lib")
+  endif()
+else()
+  if(LEMON_BUILD_SHARED_LIBRARY)
+    set(LEMON_LIB_NAME "liblemon.so")
+  else()
+    set(LEMON_LIB_NAME "liblemon.a")
+  endif()
+endif()
+
+set(LEMON_LIBRARY "${CMAKE_INSTALL_PREFIX}/lib/${LEMON_LIB_NAME}")
+
 CONFIGURE_FILE(
   ${PROJECT_SOURCE_DIR}/cmake/LEMONConfig.cmake.in
   ${PROJECT_BINARY_DIR}/cmake/LEMONConfig.cmake
