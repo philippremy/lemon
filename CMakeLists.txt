@@ -272,7 +272,7 @@ CONFIGURE_FILE(
 IF(UNIX)
   INSTALL(
     FILES ${PROJECT_BINARY_DIR}/cmake/LEMONConfig.cmake
-    DESTINATION lib/lemon/cmake
+    DESTINATION lib/cmake/lemon
   )
 ELSEIF(WIN32)
   INSTALL(
