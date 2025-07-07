@@ -28,7 +28,7 @@
 #include <lemon/lp_base.h>
 
 #include <soplex.h>
-#include <spxout.h>
+#include <soplex/spxout.h>
 
 namespace lemon {
 
