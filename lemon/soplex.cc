@@ -424,16 +424,16 @@ namespace lemon {
       _message_level = -1;
       break;
     case MESSAGE_ERROR:
-      _message_level = soplex::SPxOut::ERROR;
+      _message_level = soplex::SPxOut::Verbosity::VERB_ERROR;
       break;
     case MESSAGE_WARNING:
-      _message_level = soplex::SPxOut::WARNING;
+      _message_level = soplex::SPxOut::Verbosity::VERB_WARNING;
       break;
     case MESSAGE_NORMAL:
-      _message_level = soplex::SPxOut::INFO2;
+      _message_level = soplex::SPxOut::Verbosity::VERB_INFO2;
       break;
     case MESSAGE_VERBOSE:
-      _message_level = soplex::SPxOut::DEBUG;
+      _message_level = soplex::SPxOut::Verbosity::VERB_DEBUG;
       break;
     }
   }
