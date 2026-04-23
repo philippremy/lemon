@@ -159,5 +159,5 @@ install(
 install(
   EXPORT      LEMONTargets
   NAMESPACE   LEMON::
-  DESTINATION "${CMAKE_INSTALL_DATADIR}/lemon/cmake"
+  DESTINATION "${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_LIBDIR}/cmake/lemon"
 )
