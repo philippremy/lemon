@@ -160,17 +160,4 @@ install(
   EXPORT      LEMONTargets
   NAMESPACE   LEMON::
   DESTINATION "${CMAKE_INSTALL_DATADIR}/lemon/cmake"
-  COMPONENT   headers
 )
-
-# ---------------------------------------------------------------------------
-# DLL Windows : copie des DLL tierces
-# ---------------------------------------------------------------------------
-if(WIN32 AND LEMON_HAVE_GLPK)
-  install(FILES
-    "${GLPK_BIN_DIR}/glpk.dll"
-    "${GLPK_BIN_DIR}/libltdl3.dll"
-    "${GLPK_BIN_DIR}/zlib1.dll"
-    DESTINATION "${CMAKE_INSTALL_BINDIR}"
-  )
-endif()
