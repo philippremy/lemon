@@ -12,7 +12,7 @@ configure_file(
 
 configure_file(
   "${CMAKE_CURRENT_SOURCE_DIR}/lemon.pc.in"
-  "${CMAKE_CURRENT_BINARY_DIR}/lemon.pc"
+  "${CMAKE_CURRENT_BINARY_DIR}/LEMON.pc"
   @ONLY
 )
 
@@ -149,7 +149,7 @@ install(
 # Install — pkg-config
 # ---------------------------------------------------------------------------
 install(
-  FILES "${CMAKE_CURRENT_BINARY_DIR}/lemon.pc"
+  FILES "${CMAKE_CURRENT_BINARY_DIR}/LEMON.pc"
   DESTINATION "${CMAKE_INSTALL_LIBDIR}/pkgconfig"
 )
 
@@ -159,5 +159,5 @@ install(
 install(
   EXPORT      LEMONTargets
   NAMESPACE   LEMON::
-  DESTINATION "${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_LIBDIR}/cmake/lemon"
+  DESTINATION "${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_LIBDIR}/cmake/LEMON"
 )
