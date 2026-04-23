@@ -278,29 +278,27 @@ endif()
 # CMake config file installation
 # ---------------------------------------------------------------------------
 include(GNUInstallDirs)
+include(CMakePackageConfigHelpers)
 
-configure_file(
-  "${PROJECT_SOURCE_DIR}/cmake/LEMONConfig.cmake.in"
-  "${PROJECT_BINARY_DIR}/cmake/LEMONConfig.cmake"
-  @ONLY
+configure_package_config_file(
+  "${CMAKE_CURRENT_SOURCE_DIR}/cmake/LEMONConfig.cmake.in"
+  "${CMAKE_CURRENT_BINARY_DIR}/LEMONConfig.cmake"
+  INSTALL_DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/${PROJECT_NAME}"
+  PATH_VARS
+    CMAKE_INSTALL_LIBDIR
 )
 
-if(UNIX)
-  install(
-    FILES "${PROJECT_BINARY_DIR}/cmake/LEMONConfig.cmake"
-    DESTINATION share/lemon/cmake
-  )
-elseif(WIN32)
-  install(
-    FILES "${PROJECT_BINARY_DIR}/cmake/LEMONConfig.cmake"
-    DESTINATION cmake
-  )
-endif()
+write_basic_package_version_file(
+  "${CMAKE_CURRENT_BINARY_DIR}/LEMONConfigVersion.cmake"
+  VERSION       "${PROJECT_VERSION}"
+  COMPATIBILITY SameMajorVersion
+)
 
-configure_file(
-  "${PROJECT_SOURCE_DIR}/cmake/version.cmake.in"
-  "${PROJECT_BINARY_DIR}/cmake/version.cmake"
-  @ONLY
+install(
+  FILES
+    "${CMAKE_CURRENT_BINARY_DIR}/LEMONConfig.cmake"
+    "${CMAKE_CURRENT_BINARY_DIR}/LEMONConfigVersion.cmake"
+  DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/${PROJECT_NAME}"
 )
 
 # ---------------------------------------------------------------------------
